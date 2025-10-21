@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자동차보험가입조회 | 내차 보험료 비교견적, 책임보험 의무가입 확인</title>
+    <meta name="description" content="자동차보험가입조회는 물론, 내차 보험료를 실시간으로 비교하고 가장 저렴하고 합리적인 다이렉트 자동차보험을 찾을 수 있는 전문 비교견적 사이트입니다. 자동차보험만료일 확인부터 책임보험 의무가입 확인까지 원스톱으로 해결하세요.">
+    <meta name="keywords" content="자동차보험가입조회, 자동차보험료비교견적사이트, 내차보험료, 다이렉트자동차보험, 자동차보험만료일확인, 의무보험가입확인, 자동차보험할인특약, 자동차보험료계산, 책임보험, 차량번호로보험가입확인">
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+
+
+    
+    <style>
+        /* 기본 스타일 */
+        body { font-family: 'Noto Sans KR', sans-serif; line-height: 1.7; margin: 0; padding: 0; background: #eef4f8; color: #333; }
+        header, section, footer { max-width: 1000px; margin: 20px auto; padding: 0 25px; background: #fff; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.08); }
+        /* 타이틀 강조 및 부드러운 색감 */
+        header { 
+            background: linear-gradient(135deg, #0070f3, #004aad); 
+            color: #fff; 
+            padding: 40px 25px; 
+            text-align: center;
+            border-radius: 12px 12px 0 0;
+            margin-bottom: 0;
+        }
+        h1 { font-size: 2.8em; margin-top: 0; font-weight: 900; letter-spacing: -1px; } /* H1 강조 */
+        h2 { color: #0070f3; border-bottom: 3px solid #eef4f8; padding-bottom: 10px; margin-top: 30px; font-weight: 700; }
+        h3 { color: #004aad; margin-top: 25px; font-weight: 700; }
+        p { margin-bottom: 15px; }
+        ul, ol { padding-left: 25px; margin-bottom: 20px; }
+        li { margin-bottom: 8px; }
+        
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: #f9f9f9; border-radius: 8px; overflow: hidden; }
+        th, td { border: 1px solid #e0e0e0; padding: 12px; text-align: left; }
+        th { background: #004aad; color: #fff; font-weight: 700; text-align: center; }
+        td { background: #fff; }
+        
+        a { color: #0070f3; text-decoration: none; transition: color 0.2s; }
+        a:hover { color: #004aad; text-decoration: underline; }
+        
+        /* CTA 버튼 */
+        .btn-cta {
+            display: inline-block;
+            padding: 15px 35px;
+            background: #ff5722; /* 오렌지색 계열로 강조 */
+            color: #fff;
+            font-weight: 900;
+            font-size: 1.1em;
+            border-radius: 40px;
+            box-shadow: 0 6px 12px rgba(255, 87, 34, 0.4);
+            transition: background-color 0.3s ease, transform 0.2s;
+            text-align: center;
+            margin: 20px 0;
+            cursor: pointer;
+            border: none;
+            text-transform: uppercase;
+        }
+        .btn-cta:hover {
+            background: #e64a19;
+            transform: translateY(-2px);
+        }
+        
+        /* 내비게이션 스타일 */
+        nav { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 10px 25px; 
+            background: #fff; 
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        nav ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: space-around; }
+        nav li { margin: 5px 10px; }
+        nav a { display: block; padding: 10px 15px; background: #f1f8ff; color: #004aad; border-radius: 6px; font-weight: 500; transition: background 0.3s; }
+        nav a:hover { background: #e0f0ff; text-decoration: none; }
+
+        /* 입력 폼 스타일 */
+        #contact-form { background: #f4f8fb; padding: 30px; border-radius: 10px; border: 1px solid #e0e0e0; }
+        #contact-form label { display: block; margin-top: 15px; margin-bottom: 5px; font-weight: 700; color: #004aad; }
+        #contact-form input[type="text"], 
+        #contact-form input[type="tel"], 
+        #contact-form input[type="number"], 
+        #contact-form select, 
+        #contact-form textarea {
+            width: 100%; 
+            padding: 12px; 
+            margin-bottom: 15px; 
+            border: 1px solid #ccc; 
+            border-radius: 6px; 
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        #contact-form .form-group { display: flex; gap: 20px; }
+        #contact-form .form-group > div { flex: 1; }
+        #contact-form .form-group input { margin-bottom: 0; }
+        
+        /* 정보성 텍스트 스타일 */
+        .info-box { background: #f4f8fb; border-left: 5px solid #0070f3; padding: 15px; margin: 20px 0; border-radius: 5px; }
+        .info-box strong { color: #004aad; }
+
+        /* 내부 링크용 앵커 스타일 */
+        .anchor {
+            display: block;
+            position: relative;
+            top: -100px; /* 헤더 및 내비 높이 감안 오프셋 */
+            visibility: hidden;
+        }
+        /* 반응형 */
+        @media(max-width: 768px) {
+            header, section, footer { padding: 0 15px; margin: 10px auto; }
+            h1 { font-size: 2em; }
+            nav ul { flex-direction: column; }
+            nav li { width: 100%; margin: 5px 0; }
+            .btn-cta { width: 100%; padding: 15px 0; }
+            #contact-form .form-group { flex-direction: column; gap: 0; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FinancialService",
+      "name": "자동차보험가입조회 및 보험료 비교 서비스",
+      "image": "https://도메인/insurance_logo.png",
+      "url": "https://도메인/자동차보험가입조회",
+      "telephone": "1577-0000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "서울시 강남구 테헤란로 123",
+        "addressLocality": "서울시",
+        "addressRegion": "서울",
+        "postalCode": "06123",
+        "addressCountry": "KR"
+      },
+      "areaServed": "대한민국 전 지역",
+      "priceRange": "₩",
+      "description": "국내 모든 보험사의 자동차보험을 실시간으로 비교하고 가입 조회하는 서비스. 내차보험료를 가장 저렴하게 확인하세요."
+    }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>1분 만에 끝내는 자동차보험가입조회 및 보험료 비교</h1>
+        <p>내차 보험료, **다이렉트자동차보험**으로 얼마나 절약할 수 있을까요? 지금 바로 확인하세요! 🛡️</p>
+        <button class="btn-cta" onclick="location.href='#comparison-form'">최저가 보험료 지금 바로 비교하기</button>
+    </header>
+
+    <nav aria-label="주요 서비스 목차">
+        <ul>
+            <li><a href="#inquiry">가입 조회 방법</a></li>
+            <li><a href="#comparison-guide">보험료 비교 가이드</a></li>
+            <li><a href="#keywords-info">필수 용어 정보</a></li>
+            <li><a href="#reliability">신뢰성 및 법적 근거</a></li>
+            <li><a href="#comparison-form">실시간 견적 요청</a></li>
+        </ul>
+    </nav>
+    
+    <section id="inquiry">
+        <span class="anchor"></span>
+        <h2>자동차보험가입조회: 왜 필요하며 어떻게 해야 하나요?</h2>
+        <p>
+            **자동차보험가입조회**는 운전자라면 누구나 정기적으로 확인해야 할 필수 사항입니다. 특히 **책임보험 의무가입 확인**은 법적 의무사항으로, 미가입 시 과태료 처분을 받을 수 있습니다. 저희 서비스는 **차량번호로 보험가입확인**은 물론, 현재 가입된 **자동차보험만료일확인**까지 신속하게 제공합니다. 
+            만약 **자동차보험 만료일**이 다가왔다면, 지금 바로 조회하여 갱신 시점을 놓치지 않도록 주의해야 합니다. 
+        </p>
+        
+        <h3>내 차 보험 가입 조회 3가지 주요 목적</h3>
+        <ol>
+            <li><strong>의무보험 가입 확인:</strong> 자동차손해배상 보장법에 따른 **책임보험** 가입 여부 확인.</li>
+            <li><strong>자동차보험 만료일 확인:</strong> 갱신 시기를 놓쳐 보험료를 더 내거나 무보험 상태가 되는 것을 방지.</li>
+            <li><strong>다이렉트자동차보험 비교 견적:</strong> 현재 보험료와 타사 보험료를 비교하여 합리적인 금액으로 갱신 준비.</li>
+        </ol>
+
+        <div class="info-box">
+            <p><strong>🚨 중요:</strong> 법적으로 모든 자동차는 **책임보험**에 반드시 가입해야 합니다. **의무보험가입확인**을 소홀히 하면 최대 300만원 이하의 과태료가 부과될 수 있습니다. 정부에서 제공하는 <a href="https://www.law.go.kr/lsInfoP.do?lsiSeq=230722&efYd=20210217#0000" target="_blank">자동차손해배상 보장법</a>을 참고하세요. (외부링크 1: 법제처)</p>
+        </div>
+
+        <h3>차량번호로 보험 가입 확인 방법</h3>
+        <p>
+            단순히 **차량번호로 보험가입확인**을 원하는 경우, 보험개발원이나 각 보험사 고객센터를 통해 조회가 가능합니다. 하지만 **내차 보험료**를 정확하게 비교하고 싶다면, 운전자의 정보(나이, 운전경력, 사고 유무)와 차량 정보가 모두 필요합니다. 저희 비교 견적 시스템은 이 모든 과정을 단 한번의 입력으로 처리해 드립니다.
+        </p>
+        
+        <p>
+            <a href="https://www.kidi.or.kr/main/main.do" target="_blank">보험개발원</a>은 보험 정보의 신뢰성을 보장하는 공신력 있는 기관입니다. (외부링크 2: 보험개발원)
+        </p>
+    </section>
+    
+    <hr>
+
+    <section id="comparison-guide">
+        <span class="anchor"></span>
+        <h2>내차 보험료를 낮추는 자동차보험료비교견적사이트 활용 가이드</h2>
+        <p>
+            **자동차보험료비교견적사이트**를 활용하는 것은 현명한 소비의 첫걸음입니다. 단순히 **자동차보험가입조회**만 하는 것을 넘어, 국내 여러 보험사의 **다이렉트자동차보험** 상품을 한눈에 비교하여 최저가 견적을 찾는 것이 핵심입니다.
+        </p>
+
+        <h3>다이렉트 자동차보험이 저렴한 이유</h3>
+        <p>
+            **다이렉트자동차보험**은 설계사 수수료가 제외되어 오프라인 상품 대비 평균적으로 **15% 내외** 저렴합니다. 또한, 최근에는 다양한 **자동차보험할인특약**을 적용하여 보험료를 더욱 절감할 수 있는 기회가 많습니다.
+        </p>
+        
+        <h3>핵심 자동차보험할인특약 (자동완성 키워드 활용)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>특약 유형</th>
+                    <th>설명</th>
+                    <th>할인율 (예상)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>마일리지 특약</strong></td>
+                    <td>연간 주행 거리가 적을수록 환급 (가장 대중적인 할인)</td>
+                    <td>최대 30~40%</td>
+                </tr>
+                <tr>
+                    <td><strong>첨단 안전장치 특약</strong></td>
+                    <td>차선이탈경보장치(LDWS), 전방충돌방지장치(FCW) 장착 시</td>
+                    <td>약 5~7%</td>
+                </tr>
+                <tr>
+                    <td><strong>블랙박스 특약</strong></td>
+                    <td>블랙박스 설치 시 증빙 사진 제출</td>
+                    <td>약 1~5%</td>
+                </tr>
+                <tr>
+                    <td><strong>자녀 할인 특약</strong></td>
+                    <td>만 6세 이하 등 자녀 유무에 따라 할인</td>
+                    <td>최대 10% 이상</td>
+                </tr>
+                <tr>
+                    <td><strong>대중교통 이용 특약</strong></td>
+                    <td>특정 기간 대중교통 이용 실적에 따라 할인</td>
+                    <td>약 5~10%</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="info-box">
+            <p><strong>💡 절약 팁:</strong> **자동차보험료계산** 시, 위 특약들을 빠짐없이 체크하여 **내차 보험료**를 최소화하는 것이 중요합니다. 저희 **자동차보험료비교견적사이트**를 통해 모든 할인을 자동으로 적용한 최종 가격을 확인해 보세요.</p>
+        </div>
+
+        <p>
+            보험료 비교 시에는 **대물/대인 배상 한도**, **자기차량손해(자차)** 가입 여부 등 보장 내용을 꼼꼼히 확인해야 합니다. 단순히 저렴한 가격만 쫓기보다, 사고 발생 시 충분한 보장이 가능한 상품을 선택하는 것이 현명합니다. 금융감독원의 <a href="https://www.fss.or.kr/fss/main/main.do" target="_blank">금융소비자 정보 포털 '파인'</a>에서 공신력 있는 보험 정보를 확인해 보세요. (외부링크 3: 금융감독원)
+        </p>
+    </section>
+
+    <hr>
+    
+    <section id="keywords-info">
+        <span class="anchor"></span>
+        <h2>자동차보험 가입/조회 필수 용어 정리</h2>
+        <p>
+            **자동차보험가입조회**를 진행하면서 자주 접하게 되는 필수 용어들을 정리했습니다. 이 용어들을 이해하는 것이 올바른 보험 설계를 위해 매우 중요합니다.
+        </p>
+        
+        <dl>
+            <dt><strong>책임보험 (의무보험)</strong></dt>
+            <dd>
+                법적으로 의무화된 최소한의 보장입니다. 대인배상 I, 대물배상(최저 2천만원)을 포함하며, 이 보험이 없으면 미가입 과태료 대상이 됩니다. **의무보험가입확인**은 차량 소유자의 가장 기본적인 책임입니다.
+                <p>더 자세한 내용은 <a href="https://namu.wiki/w/책임보험" target="_blank">나무위키의 책임보험 항목</a>을 참고할 수 있습니다. (외부링크 4: 나무위키)</p>
+            </dd>
+            <dt><strong>임의보험</strong></dt>
+            <dd>
+                책임보험의 보장 한도를 초과하는 손해를 보상하기 위해 운전자가 임의로 가입하는 보험입니다. 대인배상 II, 대물배상 초과분, 자기차량손해(자차), 자기신체사고/자동차상해, 무보험차 상해 등이 여기에 해당합니다.
+            </dd>
+            <dt><strong>자기차량손해 (자차)</strong></dt>
+            <dd>
+                운전 중 본인 과실로 인해 본인 차량에 발생한 손해를 보상하는 담보입니다. **다이렉트자동차보험** 견적 시 보험료에 큰 영향을 미치므로, 가입 여부를 신중하게 결정해야 합니다.
+            </dd>
+            <dt><strong>무보험차 상해</strong></dt>
+            <dd>
+                무보험 차량 또는 뺑소니 차량에 의해 상해를 입었을 때 보상받을 수 있는 담보입니다. 상대방이 **책임보험**조차 가입하지 않았을 경우를 대비합니다.
+            </dd>
+        </dl>
+    </section>
+    
+    <hr>
+
+    <section id="reliability">
+        <span class="anchor"></span>
+        <h2>믿을 수 있는 자동차보험가입조회 시스템의 신뢰성</h2>
+        <p>
+            저희 **자동차보험료비교견적사이트**는 고객님의 개인 정보 보호와 정확한 견적 제공을 최우선으로 합니다. 모든 **자동차보험가입조회** 과정은 개인정보보호법을 준수하며, 암호화된 시스템을 통해 안전하게 처리됩니다.
+        </p>
+        
+        <h3>공인된 정보 활용</h3>
+        <p>
+            **자동차보험료계산**에 사용되는 차량 정보, 사고 이력, 만료일 등은 보험개발원 및 정부 공인 데이터베이스를 통해 확인됩니다. 이로써 고객님은 가장 정확하고 신뢰할 수 있는 **내차 보험료** 정보를 받아볼 수 있습니다.
+            <a href="https://www.mois.go.kr/frt/a01/main.do" target="_blank">행정안전부</a> 등 공인된 기관의 정보 정책을 준수합니다. (외부링크 5: 행정안전부)
+        </p>
+        
+        <h3>자주 찾는 연관 키워드 정보</h3>
+        <div style="background:#f9f9f9; padding:15px; border-radius:8px;">
+            <p><strong>함께 많이 찾는 키워드:</strong></p>
+            <p>운전자보험 비교, 이륜차보험, 렌터카 보험, 차량등록증 재발급, <span style="font-weight:700;">자동차보험만료일확인</span>, 법인차 보험, <span style="font-weight:700;">내차 보험료</span></p>
+        </div>
+    </section>
+
+    <hr>
+    
+    <section id="comparison-form">
+        <span class="anchor"></span>
+        <h2>실시간 다이렉트 자동차보험 비교견적 신청</h2>
+        <p>
+            **자동차보험가입조회**와 함께, 국내 10개 이상 보험사의 최저가 **다이렉트자동차보험** 견적을 실시간으로 받아보세요. 상세한 입력 정보를 바탕으로 가장 정확하고 저렴한 **자동차보험료계산** 결과를 제공합니다.
+        </p>
+        <form action="/submit-quote" method="POST" id="contact-form">
+            <label for="name">이름<span style="color:red;">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="본인 명의를 입력하세요" />
+
+            <div class="form-group">
+                <div>
+                    <label for="phone">연락처<span style="color:red;">*</span></label>
+                    <input type="tel" id="phone" name="phone" required placeholder="010-XXXX-XXXX" pattern="[0-9\-]{8,13}" />
+                </div>
+                <div>
+                    <label for="car-number">차량번호<span style="color:red;">*</span></label>
+                    <input type="text" id="car-number" name="car_number" required placeholder="예: 12가 3456 (차량번호로 보험가입확인)" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <label for="birth">생년월일 (피보험자)<span style="color:red;">*</span></label>
+                    <input type="text" id="birth" name="birth" required placeholder="YYYYMMDD" pattern="\d{8}" />
+                </div>
+                <div>
+                    <label for="expiration-date">현 보험 만료일</label>
+                    <input type="text" id="expiration-date" name="expiration_date" placeholder="YYYYMMDD (자동차보험만료일확인 용)" />
+                </div>
+            </div>
+            
+            <label for="driver-age">운전자 연령 한정 특약</label>
+            <select id="driver-age" name="driver_age" style="margin-bottom:15px;">
+                <option value="누구나">누구나 운전</option>
+                <option value="만26세">만 26세 이상</option>
+                <option value="만30세">만 30세 이상</option>
+                <option value="만35세">만 35세 이상</option>
+            </select>
+            
+            <label for="mileage-check">마일리지 특약 예상 주행거리</label>
+            <input type="number" id="mileage-check" name="mileage_check" placeholder="연간 예상 주행거리 (km) 입력" />
+
+            <label for="message">추가 요청 사항 (필요한 보장 내용 등)</label>
+            <textarea id="message" name="message" rows="4" placeholder="예: 자차 가입 희망, 긴급출동 서비스 추가 희망 등" style="margin-bottom:20px;"></textarea>
+
+            <button type="submit" class="btn-cta">나의 자동차보험가입조회 및 견적 요청</button>
+        </form>
+    </section>
+    
+    <section id="deep-info">
+        <span class="anchor"></span>
+        <h2>자동차보험가입조회 Q&A 및 심층 정보</h2>
+        <h3>Q1. 자동차보험 만료일을 놓치면 어떻게 되나요?</h3>
+        <p>
+            **자동차보험만료일확인**이 늦어져 보험 효력이 상실되면, 미가입 기간 동안 **책임보험** 미가입에 따른 과태료가 부과됩니다. 과태료는 비사업용 차량의 경우, 책임보험은 최대 90만원, 전체 보험은 최대 300만원까지 부과될 수 있습니다. 또한, 무보험 상태에서 사고가 발생하면 모든 피해를 본인이 직접 보상해야 하므로 재정적으로 매우 위험합니다. 따라서 반드시 **자동차보험가입조회**를 통해 만료일을 확인하고 갱신해야 합니다. **다이렉트자동차보험**에 가입할 경우, 만료일 30~60일 전부터 알림 서비스를 제공받을 수 있습니다. 
+        </p>
+
+        <h3>Q2. 내차 보험료를 가장 저렴하게 산출하는 방법은?</h3>
+        <p>
+            **내차 보험료**를 최소화하려면 여러 보험사의 **자동차보험료비교견적사이트**를 활용하여 동일한 조건(담보, 특약)에서의 가격을 비교하는 것이 필수입니다. 특히 <span style="font-weight:700;">**자동차보험할인특약**</span>을 최대한 적용해야 합니다. 예를 들어, **마일리지 특약**을 통해 주행거리에 따른 할인 혜택을 받고, 차량에 장착된 첨단 안전장치(차선이탈 경고 등) 관련 특약도 놓치지 않아야 합니다. 또한, 운전자 한정 특약(가족 한정, 부부 한정 등)을 설정하거나 운전할 수 있는 최저 연령을 높게 설정할수록 보험료가 절감됩니다. <span style="font-weight:700;">**자동차보험료계산**</span> 시에는 이 모든 요소를 종합적으로 고려해야 합니다.
+        </p>
+        
+        <h3>Q3. 차량번호로 보험가입확인만 하고 싶은데 가능한가요?</h3>
+        <p>
+            네, 가능합니다. **차량번호로 보험가입확인**은 보험개발원에서 운영하는 시스템이나 관련 기관을 통해 쉽게 할 수 있습니다. 이 조회는 주로 상대방 차량의 보험 가입 여부나 본인의 **의무보험가입확인**을 위해 사용됩니다. 다만, 이 방법으로는 구체적인 **내차 보험료**나 보험사별 견적은 알 수 없으며, 정확한 견적 산출을 위해서는 운전자의 상세 정보(사고 이력, 특약 적용 여부)가 필요합니다. 저희 서비스는 **자동차보험가입조회**와 동시에 상세 견적까지 한 번에 제공하는 통합 솔루션입니다.
+        </p>
+        
+        <p>... 이 외에도 다양한 정보(예: 보험사별 고객 서비스 만족도, 긴급출동 서비스 비교, 특약 심화 분석 등)가 이어집니다. ...</p>
+        <p>... **자동차보험가입조회**는 단순히 의무를 다하는 것을 넘어, 자신의 재산을 지키고 합리적인 소비를 위한 첫 걸음입니다. 복잡하게 느껴지는 **자동차보험료계산**을 저희 <span style="font-weight:700;">**자동차보험료비교견적사이트**</span>를 통해 쉽고 빠르게 해결하세요. 고객님의 차량에 맞는 최고의 <span style="font-weight:700;">**다이렉트자동차보험**</span>을 찾아 드리겠습니다. ...</p>
+        <p>... 특히 사회 초년생이나 차량을 처음 구매하는 분들은 <span style="font-weight:700;">**책임보험**</span>과 <span style="font-weight:700;">**임의보험**</span>의 차이를 명확히 이해하고 자신에게 맞는 보장 수준을 선택해야 합니다. <span style="font-weight:700;">**자동차보험가입조회**</span>를 통해 현재 가입된 보장 내용을 확인하는 것부터 시작해보세요. ...</p>
+        <p>... **자동차보험만료일확인** 후 갱신이 필요하다면, 최소 2주 전부터 **자동차보험료비교견적사이트**를 이용해 미리 견적을 받아보는 것이 좋습니다. ...</p>
+        <p>... 정부 기관의 <a href="http://www.molit.go.kr/" target="_blank">국토교통부</a>에서도 자동차 보험 관련 다양한 정책과 정보를 제공하고 있습니다. (외부링크 6: 국토교통부) ...</p>
+        </section>
+
+    <footer>
+        <p>© 2025 자동차보험가입조회 및 비교견적센터. All rights reserved.</p>
+        <p>상담 및 문의: <a href="tel:15770000">1577-0000</a> | 이메일: <a href="mailto:contact@domain.com">contact@domain.com</a></p>
+        <p>본 사이트는 자동차보험 비교견적 정보를 제공하며, 실제 계약은 각 보험사와 직접 체결됩니다.</p>
+    </footer>
+</body>
+
+
+
